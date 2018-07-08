@@ -4,6 +4,8 @@
 
 <p align="center">This is a simple and minimalist template for Jekyll for those who likes to eat noodles.</p>
 
+<p align="center">Revised for my friend <a href="https://github.com/sunfex">FapFapFan.</a></p>
+
 ***
 
 <p align="center">
