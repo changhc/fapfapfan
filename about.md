@@ -21,7 +21,8 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 <h2>Skills</h2>
 
 <ul class="skill-list">
-	<li>Masturbating</li>
+	<li>Matlab</li>
+	<li>C++</li>
 </ul>
 
 <h2>Projects</h2>

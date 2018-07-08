@@ -1,7 +1,7 @@
 .home,
 .blog,
-.projects
-    margin-top: 125px
+.publications
+    margin: 125px auto
 
     > .list
         border-top: 1px solid $epsilon
@@ -25,17 +25,29 @@
 
 .home > .list,
 .blog > .list,
-.projects > .list
+.publications > .list
+
     > .item
-        display: block
+        line-height: 1.5em
         width: 95%
-        margin: 0 auto
+        margin: 1em auto
+        color: #777
 
     > .item > .url
         width: 100%
-        display: block
         padding: 20px 0
         text-decoration: none
+
+    > .item > .title
+        margin: 0
+        width: 75%
+        font-weight: 500
+        color: $delta
+        transition: all ease-in-out .2s
+
+    > .item > .note
+        color: #F72833
+        font-weight: 400
 
     > .item > .url > .title
         margin: 0
@@ -63,12 +75,13 @@
         color: $alpha
 
 .blog > .list > .item > .url,
-.projects > .list > .item > .url
-    > .title
-        display: inline
+.publications > .list > .item > .url
 
     > .emoji
         display: inline
         position: relative
         top: -4px
         margin-right: 10px
+
+.home
+    max-width: 560px

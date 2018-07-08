@@ -2,15 +2,33 @@
 layout: page
 title: Publications
 ---
-<section class="list">
+<ol class="list">
     {% for post in site.posts %}
         {% if post.publications %}
-            <div class="item {% if post.star %}star{% endif %}">
-                <a class="url" href="{% if post.externalLink %}{{ post.externalLink }}{% else %}{{ site.url }}{{ post.url }}{% endif %}">
-                    <aside><time datetime="{{ post.date | date:"%d-%m-%Y" }}">{{ post.date | date: "%b %d %Y" }}</time></aside>
-                    <h3 class="title">{{ post.title }}</h3>
-                </a>
-            </div>
+            <li class="item {% if post.star %}star{% endif %}">
+                <span>{{ post.author }},</span>
+                {% if post.externalLink %}
+                    <a class="url" href="{{ post.externalLink }}">
+                        <span class="title">"{{ post.title }}"</span></a>,
+                {% elsif post.pdfFile %}
+                    <a class="url" href="/doc/{{ post.pdfFile }}">
+                        <span class="title">"{{ post.title }}"</span></a>,
+                {% else %}
+                    <span class="title">"{{ post.title }}",</span>
+                {% endif %}
+                
+                <span>
+                    {% if post.arxivId %}
+                        <i>arXiv preprint arXiv: {{ post.arxivId }}</i>,
+                    {% else %}
+                        in <i>{{ post.confName }} {% if post.confAbbr %}(<strong>{{ post.confAbbr }}</strong>){% endif %}</i>, {{ post.confLocation }}, {{ post.confDate }},
+                    {% endif %}
+                    {{ post.year }}
+                </span>
+                {% if post.note %}
+                    <span class="note">({{ post.note }})</span>
+                {% endif %}
+            </li>
         {% endif %}
     {% endfor %}
-</section>
+</ol>
